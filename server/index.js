@@ -1,9 +1,31 @@
-import koa from 'koa';
-import onerror from 'koa-onerror';
-import middleware from './middleware';
-import api from './api';
+import koa from "koa";
+import mongoose from "mongoose";
+import onerror from "koa-onerror";
 
-const router = require('koa-router')();
+import middleware from "./middleware";
+import db from "./configs/db";
+import api from "./api";
+
+mongoose.Promise = Promise;
+// connect mongodb
+mongoose.connect(
+  db.mongodb.url,
+  {
+    useUnifiedTopology: true,
+    useNewUrlParser: true
+  },
+  err => {
+    if (err) {
+      console.error(err);
+    } else {
+      console.log("Connection Success!");
+    }
+  }
+);
+
+mongoose.connection.on("error", console.error);
+
+const router = require("koa-router")();
 
 const app = new koa();
 
@@ -18,6 +40,6 @@ app.use(async (ctx, next) => {
 });
 
 app.listen(8899);
-console.log('listening...')
+console.log("listening...");
 
 export default app;

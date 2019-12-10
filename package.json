@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node server/start.js"
+    "start": "node server/start.js",
+    "dev": "nodemon server/start.js"
   },
   "author": "",
   "license": "ISC",
@@ -16,6 +17,7 @@
     "koa-onerror": "^4.1.0",
     "koa-router": "^7.4.0",
     "koa-static": "^5.0.0",
+    "mongoose": "^5.8.0",
     "require-dir": "^1.2.0"
   },
   "devDependencies": {
@@ -23,6 +25,7 @@
     "@babel/plugin-transform-runtime": "^7.7.5",
     "@babel/preset-env": "^7.7.5",
     "@babel/register": "^7.7.4",
-    "@babel/runtime": "^7.7.4"
+    "@babel/runtime": "^7.7.4",
+    "nodemon": "^2.0.1"
   }
 }
