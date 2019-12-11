@@ -14,18 +14,21 @@ export const getList = async ctx => {
 };
 
 export const updateList = async ctx => {
-  // mock
+  const { name, description, link, category, tag } = ctx.request.body;
+
   const newList = new List({
-    name: "如何使用koa2+es6/7打造高质量Restful API",
-    description: "刨根问底，篇幅略长，精华在后面，需要耐心看",
-    link: "https://www.jianshu.com/p/f59594b90500",
-    category: "koa",
-    tag: "koa"
+    name,
+    description,
+    link,
+    category,
+    tag
   });
 
   const result = await newList.save().catch(err => {
     ctx.throw(500, "服务器错误");
   });
+
+  return;
 
   ctx.body = {
     success: true,
