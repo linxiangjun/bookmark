@@ -20,6 +20,10 @@ const headerTitleStyle = css`
   padding: 0 18px;
 `;
 const contentStyle = css`
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: calc(100vh - ${HEADER_HEIGHT}px);
   overflow-x: hidden;
