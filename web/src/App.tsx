@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import BasicLayout from "./layouts/BasicLayout";
-import View from "./pages/View";
+import Pocket from "./pages/pocket";
 
 const App: React.FC = () => {
   return (
@@ -10,7 +10,7 @@ const App: React.FC = () => {
         <Switch>
           <Route path="/">
             <BasicLayout>
-              <View></View>
+              <Pocket></Pocket>
             </BasicLayout>
           </Route>
         </Switch>
